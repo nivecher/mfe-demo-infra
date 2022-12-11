@@ -1,4 +1,4 @@
-/* resource "aws_acm_certificate" "cert" {
+resource "aws_acm_certificate" "cert" {
   domain_name               = local.site_domain
   subject_alternative_names = ["*.${local.site_domain}"]
   validation_method         = "DNS"
@@ -6,7 +6,7 @@
   lifecycle {
     create_before_destroy = true
   }
-} */
+}
 
 /* resource "aws_route53_record" "dns_records" {
   for_each = {
