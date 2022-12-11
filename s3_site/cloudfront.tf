@@ -4,7 +4,7 @@ locals {
 
 resource "aws_cloudfront_distribution" "cloudfront_distro" {
   aliases = ["${var.domain}"]
-  comment = "Cloudfront distribution for ${var.domain}"
+  comment = "CloudFront distribution for ${var.domain}"
   default_root_object = "index.html"
   enabled = true
   is_ipv6_enabled = true

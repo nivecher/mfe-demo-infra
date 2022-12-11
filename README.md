@@ -1,4 +1,4 @@
-# infra
+# mfe-demo-infra
 
 Creates all the infrastructure to host a micro frontends demo.
 
