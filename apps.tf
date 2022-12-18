@@ -14,7 +14,7 @@ locals {
 }
 
 module "container" {
-  source              = "./s3_site/"
+  source              = "./modules/s3_site/"
   domain              = replace(local.apps["container"], "https://", "")
   all_domains         = local.all_domains
   hosted_zone_id      = aws_route53_zone.hosted_zone.zone_id
@@ -22,7 +22,7 @@ module "container" {
 }
 
 module "static_content" {
-  source              = "./s3_site/"
+  source              = "./modules/s3_site/"
   domain              = replace(local.apps["content"], "https://", "")
   all_domains         = local.all_domains
   hosted_zone_id      = aws_route53_zone.hosted_zone.zone_id
@@ -30,7 +30,7 @@ module "static_content" {
 }
 
 module "restaurant_browse_app" {
-  source              = "./s3_site/"
+  source              = "./modules/s3_site/"
   domain              = replace(local.apps["browse"], "https://", "")
   all_domains         = local.all_domains
   hosted_zone_id      = aws_route53_zone.hosted_zone.zone_id
@@ -38,7 +38,7 @@ module "restaurant_browse_app" {
 }
 
 module "restaurant_order_app" {
-  source              = "./s3_site/"
+  source              = "./modules/s3_site/"
   domain              = replace(local.apps["order"], "https://", "")
   all_domains         = local.all_domains
   hosted_zone_id      = aws_route53_zone.hosted_zone.zone_id

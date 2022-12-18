@@ -38,21 +38,21 @@ resource "aws_s3_bucket_policy" "site_bucket_policy" {
 
 data "aws_iam_policy_document" "cloudfront_get_from_s3" {
   statement {
-    actions = ["s3:GetObject"]
+    actions   = ["s3:GetObject"]
     resources = ["${aws_s3_bucket.site_bucket.arn}/*"]
 
     principals {
-      type = "AWS"
+      type        = "AWS"
       identifiers = ["${aws_cloudfront_origin_access_identity.cloudfront_access.iam_arn}"]
     }
   }
 
   statement {
-    actions = ["s3:ListBucket"]
+    actions   = ["s3:ListBucket"]
     resources = ["${aws_s3_bucket.site_bucket.arn}"]
 
     principals {
-      type = "AWS"
+      type        = "AWS"
       identifiers = ["${aws_cloudfront_origin_access_identity.cloudfront_access.iam_arn}"]
     }
   }

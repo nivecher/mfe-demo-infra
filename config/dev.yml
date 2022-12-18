@@ -1,0 +1,12 @@
+region: ${region} # Environment's primary region, TODO multi-region environments
+environment: ${environment}
+namespace: ${namespace}
+tf_state_dyn_table: ${tf_state_dyn_table}
+
+resource_tags:
+  deployment: terraform
+  owner: nivecher # TODO make configurable
+  service: Network Hub # TODO make configurable
+  environment: ${environment}
+
+# Insert dev specific parameters
